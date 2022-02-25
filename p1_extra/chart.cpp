@@ -51,8 +51,12 @@ void print(int values[], int size, int direction){
         }
     }else if(direction == 1){
         for(int height = 0;height<size;height++){
-            for(int width = 0;width<values[height];width++){
-                cout<<"*";
+            for(int width = 1;width<=largest;width++){
+                if(width <= values[height]){
+                    cout<<"*";
+                }else{
+                    cout<<" ";
+                }
             }
             cout<<endl;
         }
