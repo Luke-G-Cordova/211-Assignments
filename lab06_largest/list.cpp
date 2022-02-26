@@ -40,9 +40,15 @@ void List::print()
     }
 }
 
-bool List::largest_value(int &largest)
-{
-
-    // put your code here 
-
+bool List::largest_value(int &largest){
+    if(m_head == NULL) return false;
+    largest = -1;
+    Node* tmp = m_head;
+    while(tmp != NULL){
+        if(largest < tmp->m_value){
+            largest = tmp->m_value;
+        }
+        tmp = tmp->m_next;
+    }
+    return true;
 }

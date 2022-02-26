@@ -40,9 +40,18 @@ void List::print()
     }
 }
 
-void List::compare(int target, int &less_than, int &equal, int &greater_than)
-{
+void List::compare(int target, int &less_than, int &equal, int &greater_than){
+    less_than = 0;
+    equal = 0;
+    greater_than = 0;
+    Node* tmp = m_head;
+    
+    while(tmp != NULL){
 
-    // put your code here 
+        less_than       +=  tmp->m_value    <   target;
+        equal           +=  tmp->m_value    ==  target;
+        greater_than    +=  tmp->m_value    >   target;
 
+        tmp = tmp->m_next;
+    }
 }

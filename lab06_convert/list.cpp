@@ -42,7 +42,16 @@ void List::print()
     }
 }
 
-int *List::convert_to_array(int &size)
-{
-    // put your code here
+int *List::convert_to_array(int &size){
+    if(m_head == NULL)return NULL;
+    int* array = new int[length()];
+    size = length();
+    Node* tmp = m_head;
+    int cur = 0;
+    while(tmp != NULL){
+        array[cur] = tmp->m_value;
+        tmp = tmp->m_next;
+        cur++;
+    }
+    return array;
 }

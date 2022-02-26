@@ -54,7 +54,17 @@ void List::print()
     }
 }
 
-void List::remove_duplicates()
-{
-    // put your code here
+void List::remove_duplicates(){
+    if(m_head != NULL){
+        Node* tmp = m_head;
+        while(tmp != NULL){
+            if(tmp->m_next != NULL && tmp->m_next->m_value == tmp->m_value){
+                Node* delete_me = tmp->m_next;
+                tmp->m_next = tmp->m_next->m_next;
+                delete delete_me;
+            }else{
+                tmp = tmp->m_next;
+            }
+        }
+    }
 }
