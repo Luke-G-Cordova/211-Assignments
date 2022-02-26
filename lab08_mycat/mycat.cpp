@@ -38,13 +38,13 @@ int main(int argc, char *argv[])
     // argc tells us how many command line arguments were given
     // "2" means that no command line arguments were given
     // (the first argument is the name of the executable)
-    if (argc < 2)
+    if (argc < 3)
     {
         // write to standar error (cerr)
-        cerr << "No filename specified." << endl;
+        cerr << "Must specify input and output file." << endl;
         return 1; // 1 is error condition
     }
-    if (argc > 2)
+    if (argc > 3)
     {
         cerr << "Too many command line arguments specified." << endl;
         return 1;
@@ -67,13 +67,19 @@ int main(int argc, char *argv[])
 
     // buffer to hold input line
     string buffer;
-
+    ofstream my_ofile(argv[2], ios::out);
+    if(!my_ofile){
+        cerr << "Could not open output file <" << argv[2] << ">." << endl;
+        return 1;
+    }
     // as long as there is more input (not end of file), read a line
     while (getline(my_ifile, buffer, '\n'))
     {
+        my_ofile << buffer << endl;
         // write the line to standard output
         cout << buffer << endl;
     }
-
+    my_ofile.close();
+    my_ifile.close();
     return 0; // everything is ok
 }

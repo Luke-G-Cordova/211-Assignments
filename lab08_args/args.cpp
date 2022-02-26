@@ -2,7 +2,9 @@
 using namespace std;
 
 
-int main(int argc, char *argv[])
-{
-    cout << "replace this with code that prints all the command line arguments\n";
+int main(int argc, char *argv[]){
+    for(int i = 1;i < argc;i++){
+        cout << argv[i] << endl;
+    }
+    return 0;
 }
