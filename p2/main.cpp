@@ -27,7 +27,7 @@ int main(){
         cin.ignore();
         videos[size] = new Video(title, URL, comment, length, rating);
         size++;
-        if(size==MAX){
+        if(size>MAX){
             cerr << "Too many videos, giving up." << endl;
             return 1;
         }
@@ -36,7 +36,7 @@ int main(){
         for(int cur = 0;cur<last;cur++){
             if(sort == "length" && videos[cur]->byLength(videos[cur+1])){
                 swap(videos[cur], videos[cur+1]);
-            }else if(sort == "rating" && videos[cur]->byRating(videos[cur+1])){
+            }else if(sort == "rating" && videos[cur+1]->byRating(videos[cur])){
                 swap(videos[cur], videos[cur+1]);
             }else if(sort == "title" && videos[cur]->byTitle(videos[cur+1])){
                 swap(videos[cur], videos[cur+1]);
