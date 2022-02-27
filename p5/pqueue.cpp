@@ -12,6 +12,18 @@ int Pqueue::first_priority(){
     if(m_head == NULL)return -1;
     return m_head->m_priority;
 }
+int Pqueue::lowest_priority(){
+    if(m_head == NULL)return -1;
+    Node* tmp = m_head;
+    Node* lowest = m_head;
+    while(tmp != NULL){
+        if(tmp->m_priority < lowest->m_priority){
+            lowest = tmp;
+        }
+        tmp = tmp->m_next;
+    }
+    return lowest->m_priority;
+}
 void Pqueue::enqueue(Cust* cust, int priority){
     m_head = new Node(cust, priority, m_head);
     m_length++;
@@ -38,6 +50,33 @@ Cust* Pqueue::dequeue(){
     }
 
     Cust* cust = smallest->m_cust;
+    delete smallest;
+    return cust;
+}
+Cust* Pqueue::dequeue(int &priority){
+    priority = -1;
+    if(m_head == NULL)return NULL;
+    m_length--;
+    Node* tmp = m_head;
+    Node* prev = tmp;
+    Node* smallest = m_head;
+    while(tmp != NULL){
+        if(tmp->m_next != NULL && smallest->m_priority >= tmp->m_next->m_priority){
+            smallest = tmp->m_next;
+            prev = tmp;
+        }
+        tmp = tmp->m_next;
+    }
+    if(smallest == m_head){
+        m_head = m_head->m_next;
+    }else if(prev == smallest){
+        m_head = NULL;
+    }else{
+        prev->m_next = smallest->m_next;
+    }
+
+    Cust* cust = smallest->m_cust;
+    priority = smallest->m_priority;
     delete smallest;
     return cust;
 }

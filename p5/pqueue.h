@@ -9,7 +9,9 @@ using namespace std;
 class Pqueue{
     public:
         int first_priority();
+        int lowest_priority();
         Cust* dequeue();
+        Cust* dequeue(int &priority);
         void enqueue(Cust* cust, int priority);
         bool empty();
         int length();

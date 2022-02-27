@@ -1,6 +1,7 @@
 // video.cpp
 // Cordova, Luke
 #include <iostream>
+#include <assert.h>
 #include "cust.h"
 using namespace std;
 
@@ -15,21 +16,26 @@ void Cust::print(ostream& os){
     os << m_name << (m_robber?" robber ":" shopper ");
     os << m_arrival << " " << m_items << endl;
 }
-void Cust::print_enterStore(ostream& os){
-    os << m_name << " entered store"<<endl;
+void Cust::print_enterStore(ostream& os, int clock){
+    assert(clock == m_arrival);
+    os << clock <<": " << m_name << " entered store"<<endl;
 }
-void Cust::print_doneShopping(ostream& os){
-    os << m_name << " done shopping"<<endl;
+void Cust::print_doneShopping(ostream& os, int clock){
+    os << clock <<": " << m_name << " done shopping"<<endl;
 }
-void Cust::print_startCheckout(ostream& os, int checker){
-    os << m_name << " started checkout with checker " << checker <<endl;
+void Cust::print_startCheckout(ostream& os, int clock, int checker){
+    os << clock <<": " << m_name << " started checkout with checker " << checker <<endl;
 }
-void Cust::print_finishCheckout(ostream& os, int checker, int money){
+void Cust::print_finishCheckout(ostream& os, int clock, int checker, int money){
     if(m_robber){
-        os << m_name << " stole $" << money <<" and "<<m_items<<" item"<< ((m_items!=1)?"s":"") <<" to checker "<<checker<<endl;
+        os << clock << ": " << m_name << " stole $";
+        os << money << " and " << m_items << " item";
+        os << ((m_items!=1)?"s":"") << " from checker " << checker << endl;
 
     }else{
-        os << m_name << " paid $" << 3*m_items <<" for "<<m_items<<" items to checker "<<checker<<endl;
+        os << clock << ": " << m_name << " paid $";
+        os << 3*m_items << " for " << m_items <<" item";
+        os << ((m_items!=1)?"s":"") << " to checker " << checker << endl;
     }
     
 }
