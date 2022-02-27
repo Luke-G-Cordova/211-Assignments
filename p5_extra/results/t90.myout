@@ -1,0 +1,192 @@
+1: s601 entered store
+1: s619 entered store
+3: s152 entered store
+3: s382 entered store
+3: s836 entered store
+3: s935 entered store
+4: s508 entered store
+6: s649 entered store
+7: s246 entered store
+7: s831 entered store
+9: s313 entered store
+10: s587 entered store
+11: s278 entered store
+11: s941 entered store
+12: s413 entered store
+13: s602 entered store
+18: s442 entered store
+18: s621 entered store
+19: s495 entered store
+20: s48 entered store
+22: s132 entered store
+22: s208 entered store
+22: s214 entered store
+23: s602 done shopping, waiting for checker 0
+23: s602 started checkout with checker 0
+24: s656 entered store
+26: s197 entered store
+28: s602 paid $15 for 5 items to checker 0
+29: s935 done shopping, waiting for checker 0
+29: s935 started checkout with checker 0
+30: s63 entered store
+30: s391 entered store
+31: s228 entered store
+31: s258 entered store
+33: s294 entered store
+34: s142 entered store
+34: s905 entered store
+34: s621 done shopping, waiting for checker 0
+34: s621 started checkout with checker 1
+35: s708 entered store
+35: s941 done shopping, waiting for checker 0
+35: s941 started checkout with checker 2
+36: s505 entered store
+36: s649 done shopping, waiting for checker 0
+36: s649 started checkout with checker 3
+37: s90 entered store
+37: s135 entered store
+38: s343 entered store
+38: s442 done shopping, waiting for checker 0
+38: s442 started checkout with checker 4
+42: s265 entered store
+42: s935 paid $39 for 13 items to checker 0
+42: s621 paid $24 for 8 items to checker 1
+43: s373 entered store
+43: s801 entered store
+43: s910 entered store
+44: s571 entered store
+44: s754 entered store
+44: s855 entered store
+45: s278 done shopping, waiting for checker 0
+45: s801 done shopping, waiting for checker 1
+45: s278 started checkout with checker 0
+45: s801 started checkout with checker 1
+46: s432 entered store
+46: s801 paid $3 for 1 item to checker 1
+47: s140 entered store
+47: s961 entered store
+47: s941 paid $36 for 12 items to checker 2
+48: s442 paid $30 for 10 items to checker 4
+50: s222 entered store
+50: s643 entered store
+51: s149 entered store
+51: s451 entered store
+51: s932 entered store
+51: s649 paid $45 for 15 items to checker 3
+52: s889 entered store
+53: s687 entered store
+54: s828 entered store
+55: s209 entered store
+55: s313 done shopping, waiting for checker 0
+55: s135 done shopping, waiting for checker 2
+55: s313 started checkout with checker 1
+55: s135 started checkout with checker 2
+56: s240 entered store
+56: s904 entered store
+56: s508 done shopping, waiting for checker 0
+56: s508 started checkout with checker 3
+58: s172 entered store
+58: s205 entered store
+58: s559 entered store
+58: s589 entered store
+59: s827 entered store
+60: s4 entered store
+60: s190 entered store
+60: s259 entered store
+61: s30 entered store
+61: s152 done shopping, waiting for checker 0
+61: s152 started checkout with checker 4
+62: s278 paid $51 for 17 items to checker 0
+63: s89 entered store
+63: s523 entered store
+64: s257 entered store
+64: s418 entered store
+64: s904 done shopping, waiting for checker 0
+64: s135 paid $27 for 9 items to checker 2
+64: s904 started checkout with checker 0
+67: s498 entered store
+68: s9 entered store
+68: s904 paid $12 for 4 items to checker 0
+68: s152 stole $280 and 29 items from checker 4
+70: s11 entered store
+70: s686 entered store
+70: s782 entered store
+72: s92 entered store
+72: s316 entered store
+72: s782 done shopping, waiting for checker 0
+72: s782 started checkout with checker 0
+73: s256 entered store
+73: s557 entered store
+73: s782 paid $3 for 1 item to checker 0
+75: s944 entered store
+78: s35 entered store
+78: s313 paid $69 for 23 items to checker 1
+79: s883 entered store
+82: s281 entered store
+82: s289 entered store
+82: s413 done shopping, waiting for checker 0
+82: s508 paid $78 for 26 items to checker 3
+82: s413 started checkout with checker 0
+84: s35 done shopping, waiting for checker 0
+84: s35 started checkout with checker 1
+85: s99 entered store
+86: s828 done shopping, waiting for checker 0
+86: s828 started checkout with checker 2
+87: s411 entered store
+87: s502 entered store
+87: s601 done shopping, waiting for checker 3
+87: s35 paid $9 for 3 items to checker 1
+87: s601 started checkout with checker 3
+88: s172 done shopping, waiting for checker 0
+88: s172 started checkout with checker 1
+89: s233 entered store
+89: s404 entered store
+89: s992 entered store
+90: s425 entered store
+90: s660 entered store
+90: s205 done shopping, waiting for checker 0
+90: s289 done shopping, waiting for checker 5
+90: s205 started checkout with checker 4
+90: s289 started checkout with checker 5
+91: s182 entered store
+92: s17 entered store
+92: s449 entered store
+93: s373 done shopping, waiting for checker 0
+93: s373 started checkout with checker 6
+94: s289 paid $12 for 4 items to checker 5
+96: s98 entered store
+96: s403 entered store
+96: s190 done shopping, waiting for checker 0
+96: s190 started checkout with checker 5
+97: s992 done shopping, waiting for checker 0
+97: s992 started checkout with checker 7
+98: s41 entered store
+98: s208 done shopping, waiting for checker 0
+98: s208 started checkout with checker 8
+99: s496 entered store
+100: s322 entered store
+101: s992 paid $12 for 4 items to checker 7
+102: s418 done shopping, waiting for checker 7
+102: s828 paid $48 for 16 items to checker 2
+102: s418 started checkout with checker 7
+103: s294 done shopping, waiting for checker 2
+103: s172 paid $45 for 15 items to checker 1
+103: s294 started checkout with checker 2
+106: s63 done shopping, waiting for checker 0
+106: s259 done shopping, waiting for checker 9
+106: s205 paid $48 for 16 items to checker 4
+106: s63 started checkout with checker 1
+106: s259 started checkout with checker 9
+108: s475 entered store
+108: s773 entered store
+108: s822 entered store
+108: s878 entered store
+108: s132 done shopping, waiting for checker 0
+108: s656 done shopping, waiting for checker 0
+108: s132 started checkout with checker 4
+109: s961 done shopping, waiting for checker 0
+109: s418 stole $262 and 19 items from checker 7
+110: s279 entered store
+111: s849 entered store
+111: s961 started checkout with checker 7
+112: s657 entered store
