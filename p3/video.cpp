@@ -22,7 +22,7 @@ void Video::print(){
 }
 
 bool Video::byRating(Video *other){
-    return m_rating < other->m_rating;
+    return m_rating > other->m_rating;
 }
 bool Video::byTitle(Video *other){
     return m_title > other->m_title;

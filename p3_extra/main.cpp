@@ -41,10 +41,15 @@ int main(){
                 cerr << "Title <" << title << "> not in list, could not delete." << endl;
             }
         }else if(command == "print_by_length"){
-
             vlist.print_by_length();
         }else if(command == "print_by_rating"){
-            // vlist.print_by_rating();
+            vlist.print_by_rating();
+        }else if(command == "lookup_expression"){
+            string regexp;
+            getline(cin, regexp);
+            if(vlist.lookup_expression(regexp)){
+                cerr << "Regular expression <" << regexp << "> does not match any titles in list."<<endl;
+            }
         }else{
             cerr << "<" << command << "> is not a legal command, giving up." << endl;
             return 1;

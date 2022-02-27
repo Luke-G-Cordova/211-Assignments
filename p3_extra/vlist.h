@@ -15,6 +15,7 @@ class Vlist{
         void print();
         void print_by_length();
         void print_by_rating();
+        bool lookup_expression(string &regexp);
         int getLength();
         Video* lookup(string title);
         bool remove(string title);

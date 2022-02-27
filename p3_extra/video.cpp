@@ -22,20 +22,26 @@ void Video::print(){
 }
 
 bool Video::byRating(Video *other){
+    return m_rating > other->m_rating;
+}
+bool Video::byRatingE(Video *other){
     return m_rating >= other->m_rating;
+}
+bool Video::byRatingEE(Video *other){
+    return m_rating == other->m_rating;
 }
 bool Video::byTitle(Video *other){
     return m_title > other->m_title;
 }
+bool Video::byTitleE(Video *other){
+    return m_title >= other->m_title;
+}
 bool Video::byLength(Video *other){
     return m_length > other->m_length;
 }
+bool Video::byLengthE(Video *other){
+    return m_length >= other->m_length;
+}
 string Video::getTitle(){
     return m_title;
-}
-float Video::getLength(){
-    return m_length;
-}
-int Video::getRating(){
-    return m_rating;
 }

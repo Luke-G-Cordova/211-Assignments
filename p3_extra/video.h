@@ -12,11 +12,13 @@ class Video{
         Video(string title, string URL, string comment, float length, int rating);
         void print();
         bool byLength(Video *other);
+        bool byLengthE(Video *other);
         bool byTitle(Video *other);
+        bool byTitleE(Video *other);
         bool byRating(Video *other);
+        bool byRatingE(Video *other);
+        bool byRatingEE(Video *other);
         string getTitle();
-        float getLength();
-        int getRating();
     private:
         string m_title;
         string m_URL;

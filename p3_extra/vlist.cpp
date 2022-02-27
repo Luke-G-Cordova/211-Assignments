@@ -4,6 +4,7 @@
 #include <iostream>
 #include "video.h"
 #include "vlist.h"
+#include <regex.h>
 using namespace std;
 
 Vlist::Vlist(){
@@ -77,22 +78,98 @@ bool Vlist::remove(string title){
 }
 void Vlist::print_by_length(){
     Node* tmp = m_head;
-    Node* smallest = tmp;
+    Node* last_smallest = m_head;
+    Node* last_biggest = m_head;
     while(tmp != NULL){
-        if(smallest->m_video->byLength(tmp->m_video)){
-            smallest = tmp;
+        if(last_smallest->m_video->byLength(tmp->m_video)){
+            last_smallest = tmp;
+        }
+        if(tmp->m_video->byLength(last_biggest->m_video)){
+            last_biggest = tmp;
         }
         tmp = tmp->m_next;
     }
-    Node* bts = m_head;
-    for(int last = 0;last < m_length;last++){
-        bts = m_head;
-        for(tmp = m_head;tmp != NULL;tmp = tmp->m_next){
-            if(bts->m_video->byLength(tmp->m_video) && tmp->m_video->byLength(smallest->m_video)){
-                bts = tmp;
+    Node* cur_smallest = last_biggest;
+    tmp = m_head;
+    for(int i = 0;i<getLength();i++){
+        cur_smallest = last_biggest;
+        tmp = m_head;
+        while(tmp != NULL){
+            // this works with a list that has no repeats 
+            // It will absolutly break if it has to order
+            // by title due to repeats
+            if(last_smallest->m_video->byLengthE(tmp->m_video)){
+                tmp = tmp->m_next;
+            }else{
+                if(cur_smallest->m_video->byLength(tmp->m_video)){
+                    cur_smallest = tmp;
+                }
+                tmp = tmp->m_next;
             }
         }
-        // bts->m_video->print();
-        smallest = bts;
+        last_smallest->m_video->print();
+        last_smallest = cur_smallest;
     }
 }
+void Vlist::print_by_rating(){
+    Node* tmp = m_head;
+    Node* last_smallest = m_head;
+    Node* last_biggest = m_head;
+    while(tmp != NULL){
+        if(last_smallest->m_video->byRatingE(tmp->m_video)){
+            last_smallest = tmp;
+        }
+        if(tmp->m_video->byRating(last_biggest->m_video)){
+            last_biggest = tmp;
+        }
+        tmp = tmp->m_next;
+    }
+    Node* cur_biggest = last_smallest;
+    tmp = m_head;
+    for(int i = 0;i<getLength();i++){
+        cur_biggest = last_smallest;
+        tmp = m_head;
+        while(tmp != NULL){
+            if(
+                tmp->m_video->byRating(last_biggest->m_video) || 
+                (
+                    tmp->m_video->byRatingEE(last_biggest->m_video)&&
+                    last_biggest->m_video->byTitleE(tmp->m_video)
+                )
+            ){
+                tmp = tmp->m_next;
+            }else{
+                if(
+                    tmp->m_video->byRating(cur_biggest->m_video)||
+                    (
+                        tmp->m_video->byRatingEE(cur_biggest->m_video)&&
+                        cur_biggest->m_video->byTitle(tmp->m_video)
+                    )
+                ){
+                    cur_biggest = tmp;
+                }
+                tmp = tmp->m_next;
+            }
+        }
+        last_biggest->m_video->print();
+        last_biggest = cur_biggest;
+    }
+}
+bool Vlist::lookup_expression(string &regexp){
+    regex_t reg_expression;
+    string str;
+    int result = regcomp(&reg_expression, regexp.c_str(), REG_EXTENDED);
+    if(result)return 1;
+    Node* tmp = m_head;
+    int count = 0;
+    while(tmp != NULL){
+        str = tmp->m_video->getTitle();
+        if(!regexec(&reg_expression, str.c_str(), 0, 0, 0)){
+            tmp->m_video->print();
+            count++;
+        }
+        tmp = tmp->m_next;
+    }
+    return !count;
+}
+
