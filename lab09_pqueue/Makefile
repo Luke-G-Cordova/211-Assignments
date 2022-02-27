@@ -25,11 +25,27 @@
 #    -std=c++11   ==> use the C++11 standard
 #    -c           ==> compile only (create a .o file)
 
-test_queue:: cust.o pqueue.o test_queue.o
-	g++ -Wall -pedantic -g -o test_queue cust.o pqueue.o test_queue.o
+# test_queue:: cust.o pqueue.o test_queue.o
+# 	g++ -Wall -pedantic -g -o test_queue cust.o pqueue.o test_queue.o
 
-test_queue.o: cust.h pqueue.h test_queue.cpp
-	g++ -Wall -pedantic -g -std=c++11 -c test_queue.cpp
+# test_queue.o: cust.h pqueue.h test_queue.cpp
+# 	g++ -Wall -pedantic -g -std=c++11 -c test_queue.cpp
+
+# cust.o: cust.h cust.cpp
+# 	g++ -Wall -pedantic -g -std=c++11 -c cust.cpp
+
+# pqueue.o: pqueue.h pqueue.cpp cust.h
+# 	g++ -Wall -pedantic -g -std=c++11 -c pqueue.cpp
+
+# clean:
+# 	rm -f test_queue test_queue.exe cust.o pqueue.o test_queue.o
+
+
+queue:: cust.o pqueue.o queue.o
+	g++ -Wall -pedantic -g -o queue cust.o pqueue.o queue.o
+
+queue.o: cust.h pqueue.h queue.cpp
+	g++ -Wall -pedantic -g -std=c++11 -c queue.cpp
 
 cust.o: cust.h cust.cpp
 	g++ -Wall -pedantic -g -std=c++11 -c cust.cpp
@@ -38,4 +54,4 @@ pqueue.o: pqueue.h pqueue.cpp cust.h
 	g++ -Wall -pedantic -g -std=c++11 -c pqueue.cpp
 
 clean:
-	rm -f test_queue test_queue.exe cust.o pqueue.o test_queue.o
+	rm -f queue queue.exe cust.o pqueue.o queue.o

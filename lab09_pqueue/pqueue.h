@@ -21,7 +21,8 @@ class Pqueue{
                 int m_priority;
                 Node* m_next;
         };
-        Node* m_head;
+        Node* m_head = NULL;
+        int m_length = 0;
 };
 
 #endif
