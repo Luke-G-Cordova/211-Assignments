@@ -6,7 +6,7 @@ int main(){
     while(cin>>num){
         if(num%2!=0){
             cerr << "not all even" << endl;
-            return false;
+            return 1;
         }
     }
     cout << "all even" << endl;
