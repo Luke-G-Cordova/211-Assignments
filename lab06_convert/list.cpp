@@ -44,8 +44,12 @@ void List::print()
 
 int *List::convert_to_array(int &size){
     if(m_head == NULL)return NULL;
+
+    // (1) dynamically allocate an array of integers
+    //      the exact same size of the list
     int* array = new int[length()];
-    size = length();
+
+    // (2) copy all the lists values into the array
     Node* tmp = m_head;
     int cur = 0;
     while(tmp != NULL){
@@ -53,5 +57,10 @@ int *List::convert_to_array(int &size){
         tmp = tmp->m_next;
         cur++;
     }
+    
+    // (3) assign the size of the array to size
+    size = length();
+
+    // (4) return the array
     return array;
 }

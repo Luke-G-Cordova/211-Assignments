@@ -47,10 +47,13 @@ void List::compare(int target, int &less_than, int &equal, int &greater_than){
     Node* tmp = m_head;
     
     while(tmp != NULL){
-
-        less_than       +=  tmp->m_value    <   target;
-        equal           +=  tmp->m_value    ==  target;
-        greater_than    +=  tmp->m_value    >   target;
+        
+        // (tmp->m_value < target) returns a boolean and resolves
+        // to 1 if true and 0 if false. Basically add 0 if the 
+        // expression is false, add 1 if true
+        less_than       +=  (tmp->m_value    <   target);
+        equal           +=  (tmp->m_value    ==  target);
+        greater_than    +=  (tmp->m_value    >   target);
 
         tmp = tmp->m_next;
     }
