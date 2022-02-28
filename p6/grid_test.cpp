@@ -1,3 +1,5 @@
+// video.cpp
+// Cordova, Luke
 #include "grid.h"
 #include <iostream>
 using namespace std;
