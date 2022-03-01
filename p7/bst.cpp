@@ -24,18 +24,27 @@ void BST::dft(vector<string> &values, Node *cur_root){
     if(cur_root->m_right != NULL) dft(values, cur_root->m_right);
 }
 void BST::breadth(queue<string> &values){
+    queue<string> holder;
     if(m_root!=NULL){
-        values.push(m_root->m_value);
-        breadth(values, m_root);
+        bool break_loop = false;
+        int i = 0;
+        while(!break_loop){
+            find_amt_away(m_root, i, holder);
+            if(holder.size()==0)break_loop = true;
+            while(holder.size()!=0){
+                values.push(holder.front());
+                holder.pop();
+            }
+            i++;
+        }
     }
 }
-void BST::breadth(queue<string> &values, Node *cur_root){
-    
-    if(cur_root->m_left!=NULL)values.push(cur_root->m_left->m_value);
-    if(cur_root->m_right!=NULL)values.push(cur_root->m_right->m_value);
-
-    if(cur_root->m_left!=NULL)breadth(values, cur_root->m_left);
-    if(cur_root->m_right!=NULL)breadth(values, cur_root->m_right);
+void BST::find_amt_away(Node *cur_root, int des_dist, queue<string> &values, int dist){
+    if(dist == des_dist){values.push(cur_root->m_value);}
+    else{
+        if(cur_root->m_left!=NULL) find_amt_away(cur_root->m_left, des_dist, values, dist+1);
+        if(cur_root->m_right!=NULL) find_amt_away(cur_root->m_right, des_dist, values, dist+1);
+    }
 }
 
 int BST::size(){

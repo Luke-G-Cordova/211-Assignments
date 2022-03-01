@@ -1,4 +1,3 @@
-echo t18: Insert days of week into tree, then call balanced
 insert Saturday
 insert Friday
 insert Tuesday
@@ -6,4 +5,4 @@ insert Monday
 insert Thursday
 insert Wednesday
 insert Sunday
-balanced
+breadth

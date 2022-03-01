@@ -36,12 +36,10 @@ class BST{
         bool insert(string stg, Node *&cur_root);
         bool find(string stg, Node *cur_root);
         void dft(vector<string> &values, Node *cur_root);
-        void breadth(queue<string> &values, Node *cur_root);
         double distance(Node *cur_root, int dist = 0);
         int ballanced(Node *cur_root, int dist = 0);
         void insert_from_vector(vector<string> &elements, int start_index, int end_index);
-
-
+        void find_amt_away(Node *cur_root, int des_dist, queue<string> &values, int dist = 0);
 };
 
 
